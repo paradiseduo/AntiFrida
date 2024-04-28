@@ -4,3 +4,8 @@
 - (void)👈🏻;
 - (void)👉🏻;
 @end
+
+
+@interface ⁢⁡⁠TestFrida : NSObject
+- (void)⁢⁡⁠testFrida;
+@end
