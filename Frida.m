@@ -17,3 +17,9 @@
     NSLog(@"👉🏻");
 }
 @end
+
+@implementation ⁢⁡⁠TestFrida
+- (void)⁢⁡⁠testFrida {
+    NSLog(@"⁢⁡⁠testFrida");
+}
+@end
