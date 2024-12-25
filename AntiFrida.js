@@ -100,25 +100,38 @@ function dump() {
 
     console.log("\nAfter hook, head instructions: \n");
     var ins2 = Instruction.parse(func_pointer);
-    console.log(
-        hexdump(ins2.address, {
-            offset: 0,
-            length: ins2.size,
-            header: false,
-            ansi: false,
-        }),
-        ins2.toString()
-    );
-    ins2 = Instruction.parse(ins2.next);
-    console.log(
-        hexdump(ins2.address, {
-            offset: 0,
-            length: ins2.size,
-            header: false,
-            ansi: false,
-        }),
-        ins2.toString()
-    );
+    for (var i = 0; i < 8; i++) {
+        console.log(
+            hexdump(ins2.address, {
+                offset: 0,
+                length: ins2.size,
+                header: false,
+                ansi: false,
+            }),
+            ins2.toString()
+        );
+        ins2 = Instruction.parse(ins2.next);
+    }
+    // var ins2 = Instruction.parse(func_pointer);
+    // console.log(
+    //     hexdump(ins2.address, {
+    //         offset: 0,
+    //         length: ins2.size,
+    //         header: false,
+    //         ansi: false,
+    //     }),
+    //     ins2.toString()
+    // );
+    // ins2 = Instruction.parse(ins2.next);
+    // console.log(
+    //     hexdump(ins2.address, {
+    //         offset: 0,
+    //         length: ins2.size,
+    //         header: false,
+    //         ansi: false,
+    //     }),
+    //     ins2.toString()
+    // );
 
     hook = eval("ObjC.classes." + className + '["' + funcName + '"]');
     console.log('\nAfter => Imp Addr:' + hook.implementation);
